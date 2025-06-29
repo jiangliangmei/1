@@ -1,4 +1,4 @@
-#第一题
+# 第一题：定义 Car 类
 class Car:
     """汽车类，包含品牌和速度属性，以及加速、刹车方法"""
 
@@ -40,8 +40,7 @@ class Car:
         return self.speed
 
 
-
-#第二题
+# 第二题：测试 Car 类
 # 创建Car实例
 my_car = Car("宝马")
 print(f"汽车品牌：{my_car.brand}，初始速度：{my_car.speed} km/h")
@@ -59,9 +58,7 @@ final_speed = my_car.get_current_speed()
 print(f"\n最终速度：{final_speed} km/h")
 
 
-
-
-#第三题
+# 第三题：定义 ElectricCar 类
 class ElectricCar(Car):
     """电动汽车类，继承自Car类，新增电量属性和充电方法"""
 
@@ -89,3 +86,24 @@ class ElectricCar(Car):
     def get_current_battery(self):
         """获取当前电量"""
         return self.battery
+
+
+# 测试 ElectricCar 类
+# 创建ElectricCar实例
+my_electric_car = ElectricCar("特斯拉")
+print(f"\n电动汽车品牌：{my_electric_car.brand}")
+print(f"初始速度：{my_electric_car.get_current_speed()} km/h")
+print(f"初始电量：{my_electric_car.get_current_battery()}%\n")
+
+# 测试加速和刹车（继承自父类的方法）
+my_electric_car.accelerate(2)
+my_electric_car.brake(1)
+
+# 测试充电功能（子类新增方法）
+my_electric_car.charge()         # 充电1次，电量+20
+my_electric_car.charge(3)        # 充电3次，电量+60（不超过100）
+
+# 输出最终状态
+final_speed = my_electric_car.get_current_speed()
+final_battery = my_electric_car.get_current_battery()
+print(f"\n最终状态：速度 {final_speed} km/h，电量 {final_battery}%")
