@@ -1,6 +1,8 @@
 import requests
 from lxml import html
+
 import time
+
 
 url = "https://we.51job.com/pc/search?jobArea=090200&keyword=java&searchType=2&sortType=0&metro="
 headers = {
